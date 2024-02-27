@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:p1="urn:alrosa:AD:Users" name="SI_GetADUser_Out" targetNamespace="urn:alrosa:AD:Users" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation />
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="OP_SI_GetADUser_Out" />
+  <wsdl:types>
+    <xsd:schema xmlns="urn:alrosa:AD:Users" targetNamespace="urn:alrosa:AD:Users" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="MT_UserFilter" type="p1:DT_UserFilter" />
+      <xsd:element name="MT_UserResponse" type="p1:DT_UserResponse" />
+      <xsd:complexType name="DT_UserFilter">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Фильтр по атрибутам пользователя</xsd:documentation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">e23dc8f5c56811ebb00e0000020c8846</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="LastName" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">9c57cb2bc3aa11eb9868c8cbb828ceb1</xsd:appinfo>
+              <xsd:documentation>Фамилия сотрудника</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="FirstName" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">9c57cb2cc3aa11eb9d7bc8cbb828ceb1</xsd:appinfo>
+              <xsd:documentation>Имя сотрудника</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="MiddleName" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">9c57cb2dc3aa11ebc8e8c8cbb828ceb1</xsd:appinfo>
+              <xsd:documentation>Отчество сотрудника</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="PersonalNumber" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">d398cdc1c56811eb8c43c8cbb828ceb1</xsd:appinfo>
+              <xsd:documentation>Табельный номер</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DT_UserResponse">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Учетная запись пользователя</xsd:documentation>
+          <xsd:appinfo source="http://sap.com/xi/VersionID">e418431ac60811eba2ca0000020c8846</xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="row">
+            <xsd:annotation>
+              <xsd:appinfo source="http://sap.com/xi/TextID">192f84c6c46e11ebb5efc8cbb828ceb1</xsd:appinfo>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="LoginName" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">3c7ff1eec3aa11ebc9dac8cbb828ceb1</xsd:appinfo>
+                    <xsd:documentation>Логин без домена</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="DomainName" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">3c7ff1efc3aa11eb9976c8cbb828ceb1</xsd:appinfo>
+                    <xsd:documentation>Доменное имя</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="LastName" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">3c7ff1f1c3aa11ebb7b7c8cbb828ceb1</xsd:appinfo>
+                    <xsd:documentation>Фамилия</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="FirstName" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">3c7ff1f2c3aa11eb8848c8cbb828ceb1</xsd:appinfo>
+                    <xsd:documentation>Имя</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="MiddleName" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">3c7ff1f3c3aa11ebcfe8c8cbb828ceb1</xsd:appinfo>
+                    <xsd:documentation>Отчество</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="Email" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">3c7ff1f4c3aa11ebc913c8cbb828ceb1</xsd:appinfo>
+                    <xsd:documentation>Эл. почта</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="PersonalNumber" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:appinfo source="http://sap.com/xi/TextID">3c7ff1f0c3aa11eb84bec8cbb828ceb1</xsd:appinfo>
+                    <xsd:documentation>Табельный номер</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MT_UserFilter">
+    <wsdl:documentation />
+    <wsdl:part name="MT_UserFilter" element="p1:MT_UserFilter" />
+  </wsdl:message>
+  <wsdl:message name="MT_UserResponse">
+    <wsdl:documentation />
+    <wsdl:part name="MT_UserResponse" element="p1:MT_UserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SI_GetADUser_Out">
+    <wsdl:documentation />
+    <wsdl:operation name="SI_GetADUser_Out">
+      <wsdl:documentation />
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_SI_GetADUser_Out" />
+      </wsp:Policy>
+      <wsdl:input message="p1:MT_UserFilter" />
+      <wsdl:output message="p1:MT_UserResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SI_GetADUser_OutBinding" type="p1:SI_GetADUser_Out">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <wsdl:operation name="SI_GetADUser_Out">
+      <operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <wsdl:input>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:input>
+      <wsdl:output>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SI_GetADUser_OutService">
+    <wsdl:port name="HTTP_Port" binding="p1:SI_GetADUser_OutBinding">
+      <address location="http://mir-sap16.alrosa.ru:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BC_Directum&amp;receiverParty=&amp;receiverService=&amp;interface=SI_GetADUser_Out&amp;interfaceNamespace=urn%3Aalrosa%3AAD%3AUsers" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+    <wsdl:port name="HTTPS_Port" binding="p1:SI_GetADUser_OutBinding">
+      <address location="https://mir-sap16.alrosa.ru:50301/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BC_Directum&amp;receiverParty=&amp;receiverService=&amp;interface=SI_GetADUser_Out&amp;interfaceNamespace=urn%3Aalrosa%3AAD%3AUsers" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
